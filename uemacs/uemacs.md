@@ -3,7 +3,7 @@
 [kernel.org](https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git/).
 Latest version built and tested on Cygwin, Ubuntu Linux and NetBSD.
 
-[Quick build and install](https://warehouse.motd.org/?page_id=57)
+[Quick build and install](quick.html)
 
 ![µEMACS sample screenshot](https://warehouse.motd.org/wp-content/uploads/2020/10/ue_screenshot.png)
 
