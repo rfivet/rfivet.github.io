@@ -58,8 +58,9 @@ at [git.sdf.org](https://git.sdf.org/rfivet/uemacs). You can either clone
 the [git repository](https://github.com/rfivet/uemacs.git) or download a
 [zip archive](https://github.com/rfivet/uemacs/archive/master.zip).
 
-```
 Move to working directory and clone:
+
+```
 % mkdir ~/Projects
 % cd ~/Projects
 % git clone https://github.com/rfivet/uemacs.git
@@ -95,5 +96,6 @@ Execute a sample script:
 ```
 
 ![Executing script screensize.cmd](https://warehouse.motd.org/wp-content/uploads/2020/10/ue_screensize.png)
+
 ___
 © 2020-2021 Renaud Fivet
