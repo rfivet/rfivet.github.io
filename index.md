@@ -2,7 +2,7 @@
 
 [µEMACS](uemacs/uemacs.html)
 
-[stm32bringup](https://warehouse.motd.org/?page_id=148)
+[stm32bringup](stm32bringup/)
 
 ---
 Copyright © 2021 Renaud Fivet
