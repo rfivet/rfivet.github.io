@@ -27,24 +27,30 @@ I proceed by small incremental steps that are easy to reproduce and simple
 enough to adapt to a variant of the micro-controller or a different board
 layout.
 
-- Pick up a [toolchain](11_toolchain), install it and check that it can build
-an executable.
-- Write a minimal [bootstrap](12_bootstrap) for a target micro-controller and
-build a first executable.
-- [Flash](13_flash) the first executable in an
-actual board and verify that it boots.
-- Provide feedback by turning the
-[user LED ON](https://warehouse.motd.org/?page_id=303) and making it
-[blink](https://warehouse.motd.org/?page_id=324).
-- Use the System [Tick](https://warehouse.motd.org/?page_id=359) to handle the
-blinking.
+- Pick up a [toolchain](11_toolchain), install it and check that it can
+build an executable.
+
+- Write a minimal [bootstrap](12_bootstrap) for a target
+micro-controller and build a first executable.
+
+- [Flash](13_flash) the first executable in an actual board and verify
+that it boots.
+
+- Provide feedback by turning the [user LED ON](14_ledon) and making it
+[blink](15_blink).
+
+- Use the System [Tick](https://warehouse.motd.org/?page_id=359) to
+handle the blinking.
+
 - Insure that RAM memory is initialized as expected for a
 [C startup](https://warehouse.motd.org/?page_id=273).
-- Structure the code according to the
-[three stages](https://warehouse.motd.org/?page_id=412): boot, initialization
+
+- Structure the code according to the [three
+stages](https://warehouse.motd.org/?page_id=412): boot, initialization
 and main execution.
-- [Publish](https://warehouse.motd.org/?page_id=433) the code to a web git
-repository for further evolution.
+
+- [Publish](https://warehouse.motd.org/?page_id=433) the code to a web
+git repository for further evolution.
 
 ## Part II: Let's talk!
 It’s time to move to a more talkative interface so that the board not only

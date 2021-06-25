@@ -143,7 +143,7 @@ We have used the Serial Wire Debug (SWD) interface to flash and debug
 our bootstrap in an actual board using a ST-Link hardware adapter and
 STM32 Cube Programmer application.
 
-[Next](https://warehouse.motd.org/?page_id=303) I will provide feedback
+[Next](14_ledon) I will provide feedback
 of execution directly through the board.
 
 ___
