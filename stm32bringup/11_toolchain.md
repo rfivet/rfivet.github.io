@@ -256,9 +256,8 @@ rm empty.o empty.elf
 At this stage, I have a working toolchain and I am able to build from an empty
 source file (**empty.c**) to an empty binary file (**empty.bin**).
 
-[Next](https://warehouse.motd.org/?page_id=215) I will select a
-micro-controller from the STM32 family and generate a binary file that it
-could execute.
+[Next](12_bootstrap) I will select a micro-controller from the STM32 family and
+generate a binary file that it can execute.
 
 ___
 © 2020-2021 Renaud Fivet
