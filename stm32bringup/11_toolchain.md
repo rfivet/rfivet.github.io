@@ -15,20 +15,22 @@ one you use for a specific project. One downside to this is that the directory
 and filename convention is heavy. For practical use, you need to configure an
 IDE or encapsulate those paths and names in **Makefile** variables.
 
-	### Build environment selection
+```make
+### Build environment selection
 
-	#GCCDIR = "D:/Program Files (x86)/GNU Tools ARM Embedded/9 2019-q4-major"
-	GCCDIR = "D:/Program Files (x86)/GNU Arm Embedded Toolchain/9 2020-q2-update"
+#GCCDIR = "D:/Program Files (x86)/GNU Tools ARM Embedded/9 2019-q4-major"
+GCCDIR = "D:/Program Files (x86)/GNU Arm Embedded Toolchain/9 2020-q2-update"
 
-	BINPFX  = $(GCCDIR)/bin/arm-none-eabi-
-	CC      = $(BINPFX)gcc
+BINPFX  = $(GCCDIR)/bin/arm-none-eabi-
+CC      = $(BINPFX)gcc
 
-	### Build rules
+### Build rules
 
-	.PHONY: version
+.PHONY: version
 
-	version:
-	        $(CC) --version
+version:
+        $(CC) --version
+```
 
 - **GCCDIR** holds the path to the folder where the toolchain is installed.
 When we install a new release, we need to update this path.
@@ -59,7 +61,7 @@ By selecting the path based on the development environment, there is no need
 to make changes while switching between OS. **Gmake** has the built-in variable
 **MAKE_HOST** that can be tested for this.
 
-```
+```make
 ### Build environment selection
 
 ifeq (linux, $(findstring linux, $(MAKE_HOST)))
@@ -113,7 +115,7 @@ There are sample link scripts that come with the toolchain, they are located
 in the subfolder **share/gcc-arm-none-eabi/samples/ldscripts**. For now we can
 use the simplest script: **mem.ld**.
 
-```
+```make
 ### Build environment selection
 
 ifeq (linux, $(findstring linux, $(MAKE_HOST)))
@@ -145,7 +147,7 @@ $ make empty.elf
 Finally, we use the command **objcopy** to convert the executable **.elf** file
 into binary or intel hex format suitable to load in the micro-controller.
 
-```
+```make
 ### Build environment selection
 
 ifeq (linux, $(findstring linux, $(MAKE_HOST)))
@@ -200,7 +202,7 @@ when they are executed. Adding an **echo** of the command target in the rules
 helps to keep track of the build progression.
 - A new **clean** rule will remove all generated files.
 
-```
+```make
 ### Build environment selection
 
 ifeq (linux, $(findstring linux, $(MAKE_HOST)))
@@ -252,7 +254,7 @@ rm empty.o empty.elf
 
 ## Checkpoint
 At this stage, I have a working toolchain and I am able to build from an empty
-source file (**empty.c**)to an empty binary file (**empty.bin**).
+source file (**empty.c**) to an empty binary file (**empty.bin**).
 
 [Next](https://warehouse.motd.org/?page_id=215) I will select a
 micro-controller from the STM32 family and generate a binary file that it
