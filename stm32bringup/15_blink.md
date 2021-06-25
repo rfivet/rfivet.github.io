@@ -1,4 +1,4 @@
-# Blinking user LED
+# I.5 Blinking user LED
 
 Turning the user LED on shows that the board is alive, making it blink
 shows that it has a pulse! A steady power LED and a pulsing user LED is
@@ -73,7 +73,7 @@ rm blink.o blink.elf
 
 ## Test
 
-![video](https://warehouse.motd.org/wp-content/uploads/2020/11/Blink.mp4)
+[video](https://warehouse.motd.org/wp-content/uploads/2020/11/Blink.mp4)
 
 As the video shows, the delay is roughly 600ms. I captured three on/off
 transition in this three second video, looking through the frames gives
