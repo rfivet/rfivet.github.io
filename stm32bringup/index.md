@@ -27,7 +27,7 @@ I proceed by small incremental steps that are easy to reproduce and simple
 enough to adapt to a variant of the micro-controller or a different board
 layout.
 
-- Pick up a [toolchain](https://warehouse.motd.org/?page_id=453), install it
+- Pick up a [toolchain](11_toolchain), install it
 and check that it can build an executable.
 - Write a minimal [bootstrap](https://warehouse.motd.org/?page_id=215) for a
 target micro-controller and build a first executable.
