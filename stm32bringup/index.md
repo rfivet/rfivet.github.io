@@ -31,7 +31,7 @@ layout.
 an executable.
 - Write a minimal [bootstrap](12_bootstrap) for a target micro-controller and
 build a first executable.
-- [Flash](https://warehouse.motd.org/?page_id=248) the first executable in an
+- [Flash](13_flash) the first executable in an
 actual board and verify that it boots.
 - Provide feedback by turning the
 [user LED ON](https://warehouse.motd.org/?page_id=303) and making it

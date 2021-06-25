@@ -238,7 +238,7 @@ opcode location.
 ## Checkpoint
 I have built a first executable targeting a member of the STM32 family.
 
-[Next](https://warehouse.motd.org/?page_id=248) I will take a board with a
+[Next](13_flash) I will take a board with a
 STM32F030F4P6 and check if this code behaves as expected.
 
 Below is the **Makefile** for reference. If you happen to cut&paste from this
