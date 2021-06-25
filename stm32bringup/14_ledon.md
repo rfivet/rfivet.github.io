@@ -107,7 +107,7 @@ ledon.hex
 ## Test
 
 Once the board has been flashed with this code, the user LED lights up
-at reset. It turns out to be blue.
+at reset. It turns out to be blue. 😎
 
 ![](https://warehouse.motd.org/wp-content/uploads/2020/11/Blink_Moment.png)
 
