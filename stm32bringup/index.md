@@ -44,9 +44,8 @@ that it boots.
 - Insure that RAM memory is initialized as expected for a [C
 startup](17_cstartup).
 
-- Structure the code according to the [three
-stages](https://warehouse.motd.org/?page_id=412): boot, initialization
-and main execution.
+- Structure the code according to the [three stages](18_3stages): boot,
+initialization and main execution.
 
 - [Publish](https://warehouse.motd.org/?page_id=433) the code to a web
 git repository for further evolution.
