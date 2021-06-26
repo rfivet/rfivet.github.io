@@ -65,8 +65,8 @@ with a serial connection.
 
 - Say [hello]( 23_hello) as first transmission.
 
-- Use [stm32flash](https://warehouse.motd.org/?page_id=578) as flashing
-tool on both Windows and Linux.
+- Use [stm32flash]( 24_stm32flash) as flashing tool on both Windows and
+Linux.
 
 - [Prototype](https://warehouse.motd.org/?page_id=612) an application
 that tells how long the system has been running.

@@ -1,4 +1,4 @@
-# 2.3 Hello There
+# 2.3 Hello There!
 
 Looking for a “_you had me at hello_” moment? Let’s see how serial
 transmission works for you.
@@ -46,7 +46,7 @@ Sending data is done by writing in the Transmission Data Register (TDR).
 To check if it is ready for transmission you must check the state of the
 TX Empty (TXE) bit in the Interrupt & Status Register (ISR).
 
-I write a basic `kputc()` function that does busy waiting if the *TDR* is
+I write a basic `kputc()` function that does busy waiting if the **TDR** is
 not empty and insures that LF are mapped to CR LF. The ‘k’ in kputc
 refer to ‘kernel’, as kputc is a low level function that will be used
 mostly for debugging. With the busy wait and the recursive code this
@@ -134,8 +134,8 @@ I have now a functional serial transmission channel through **USART1**. I
 have only a first implementation for `puts()`, but I will add support for
 other stdio functions when needed.
 
-[Next]( https://warehouse.motd.org/?page_id=578) I will switch to a tool for flashing over serial connection that
-works on both Windows and Linux.
+[Next]( 24_stm32flash) I will switch to a tool for flashing over serial
+connection that works on both Windows and Linux.
 
 ___
 © 2020-2021 Renaud Fivet
