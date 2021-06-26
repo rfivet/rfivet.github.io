@@ -73,8 +73,8 @@ loader.
 I have now working hardware and software that communicate through the
 serial link.
 
-[Next]( https://warehouse.motd.org/?page_id=514) I will insure the code
-I wrote so far is working on the new board.
+[Next]( 22_board) I will insure the code I wrote so far is working on
+the new board.
 
 ___
 © 2020-2021 Renaud Fivet

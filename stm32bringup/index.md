@@ -60,9 +60,8 @@ to a working asynchronous serial communication.
 USB to UART adapter and using a Windows Flash loader application to read
 the chipset flash memory.
 
-- Make sure that the code evolved so far works on the
-[board](https://warehouse.motd.org/?page_id=514) with a serial
-connection.
+- Make sure that the code evolved so far works on the [board]( 22_board)
+with a serial connection.
 
 - Say [hello](https://warehouse.motd.org/?page_id=546) as first
 transmission.
