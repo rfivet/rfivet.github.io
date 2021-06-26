@@ -47,45 +47,67 @@ startup](17_cstartup).
 - Structure the code according to the [three stages](18_3stages): boot,
 initialization and main execution.
 
-- [Publish](https://warehouse.motd.org/?page_id=433) the code to a web
-git repository for further evolution.
+- [Publish](19_publish) the code to a web git repository for further
+evolution.
 
 ## Part II: Let's talk!
-It’s time to move to a more talkative interface so that the board not only
-winks but also speaks. Again I will go through several steps to get to a
-working asynchronous serial communication.
 
-- [Validate](https://warehouse.motd.org/?page_id=484) the serial connection by
-wiring a board with an USB to UART adapter and using a Windows Flash loader
-application to read the chipset flash memory.
+It’s time to move to a more talkative interface so that the board not
+only winks but also speaks. Again I will go through several steps to get
+to a working asynchronous serial communication.
+
+- [Validate](https://warehouse.motd.org/?page_id=484) the serial
+connection by wiring a board with an USB to UART adapter and using a
+Windows Flash loader application to read the chipset flash memory.
+
 - Make sure that the code evolved so far works on the
-[board](https://warehouse.motd.org/?page_id=514) with a serial connection.
-- Say [hello](https://warehouse.motd.org/?page_id=546) as first transmission.
-- Use [stm32flash](https://warehouse.motd.org/?page_id=578) as flashing tool
-on both Windows and Linux.
-- [Prototype](https://warehouse.motd.org/?page_id=612) an application that
-tells how long the system has been running.
+[board](https://warehouse.motd.org/?page_id=514) with a serial
+connection.
+
+- Say [hello](https://warehouse.motd.org/?page_id=546) as first
+transmission.
+
+- Use [stm32flash](https://warehouse.motd.org/?page_id=578) as flashing
+tool on both Windows and Linux.
+
+- [Prototype](https://warehouse.motd.org/?page_id=612) an application
+that tells how long the system has been running.
+
 - Write a production version of
 [uptime](https://warehouse.motd.org/?page_id=657) application.
+
 - Bundle the standard C library output functions into an actual
 [library](https://warehouse.motd.org/?page_id=696).
-- [Configure](https://warehouse.motd.org/?page_id=725) baud rate and clocks.
+
+- [Configure](https://warehouse.motd.org/?page_id=725) baud rate and
+clocks.
+
 - Handle the transmission with
 [interrupt](https://warehouse.motd.org/?page_id=763).
 
 ## Part III: Sensors! So hot! So wet!
-- Implement [DHT11](https://warehouse.motd.org/?page_id=798) humidity and
-temperature sensor reading.
-- [Investigate](https://warehouse.motd.org/?page_id=849) the quality of the
-DHT11 measurements.
-- Use [DS18B20](https://warehouse.motd.org/?page_id=908) digital thermometer
-for accurate temperature reading.
-- Trigger [ADC](https://warehouse.motd.org/?page_id=946) conversion to read the
-internal voltage and temperature sensors.
+
+- Implement [DHT11](https://warehouse.motd.org/?page_id=798) humidity
+and temperature sensor reading.
+
+- [Investigate](https://warehouse.motd.org/?page_id=849) the quality of
+the DHT11 measurements.
+
+- Use [DS18B20](https://warehouse.motd.org/?page_id=908) digital
+thermometer for accurate temperature reading.
+
+- Trigger [ADC](https://warehouse.motd.org/?page_id=946) conversion to
+read the internal voltage and temperature sensors.
+
 - [Calibrate](https://warehouse.motd.org/?page_id=1035) the internal
 temperature sensor.
-- [Update](https://warehouse.motd.org/?page_id=1180) toolchain to latest.
-- Build for [In RAM Execution](https://warehouse.motd.org/?page_id=1295).
+
+- [Update](https://warehouse.motd.org/?page_id=1180) toolchain to
+latest.
+
+- Build for [In RAM
+Execution](https://warehouse.motd.org/?page_id=1295).
+
 - Read a [Resistor](https://warehouse.motd.org/?page_id=1421) Value.
 
 ___

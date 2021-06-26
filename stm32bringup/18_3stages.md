@@ -220,6 +220,9 @@ $(PROJECT).elf: $(OBJS)
     $(OBJCOPY) -O ihex $< $@
 ```
 
+A successful build will generate the files **f030f4.hex**,
+**f030f4.bin**, **f030f4.map**, **f030f4.lst**.
+
 ## Build and Test
 
 Even if **stdlib.h** is included in **success.c**, there is no C
@@ -246,8 +249,7 @@ didn’t introduce any ~~bugs~~ changes, just code overhead.
 
 This step was mainly to achieve a better structure for future evolution.
 
-[Next](https://warehouse.motd.org/?page_id=433) I will make the code
-available in a git repository.
+[Next](19_publish) I will make the code available in a git repository.
 
 ___
 © 2020-2021 Renaud Fivet
