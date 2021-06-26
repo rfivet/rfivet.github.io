@@ -1,4 +1,4 @@
-# I.5 Blinking user LED
+# I.5: Blinking user LED
 
 Turning the user LED on shows that the board is alive, making it blink
 shows that it has a pulse! A steady power LED and a pulsing user LED is
@@ -86,8 +86,8 @@ development in a nutshell. Also I didn’t come with a reasonable value
 for the delay counter at first, it’s easy to underestimate how fast
 micro-controllers are.
 
-[Next](https://warehouse.motd.org/?page_id=359), interrupt driven
-blinking, because active wait delay is just not cool.
+[Next](16_ledtick), interrupt driven blinking, because active wait delay
+is just not cool.
 
 ___
 © 2020-2021 Renaud Fivet

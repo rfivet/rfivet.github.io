@@ -39,8 +39,7 @@ that it boots.
 - Provide feedback by turning the [user LED ON](14_ledon) and making it
 [blink](15_blink).
 
-- Use the System [Tick](https://warehouse.motd.org/?page_id=359) to
-handle the blinking.
+- Use the System [Tick](16_ledtick) to handle the blinking.
 
 - Insure that RAM memory is initialized as expected for a
 [C startup](https://warehouse.motd.org/?page_id=273).
