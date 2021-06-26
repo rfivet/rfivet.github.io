@@ -41,8 +41,8 @@ that it boots.
 
 - Use the System [Tick](16_ledtick) to handle the blinking.
 
-- Insure that RAM memory is initialized as expected for a
-[C startup](https://warehouse.motd.org/?page_id=273).
+- Insure that RAM memory is initialized as expected for a [C
+startup](17_cstartup).
 
 - Structure the code according to the [three
 stages](https://warehouse.motd.org/?page_id=412): boot, initialization

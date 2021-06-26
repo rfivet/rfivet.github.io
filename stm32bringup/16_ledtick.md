@@ -152,8 +152,7 @@ other hand, except for the stack, I have not used RAM memory so far.
 |**blink**   | 68	| 0		| 0     |
 |**ledtick** | 148	| 0		| 0     |
 
-[Next](https://warehouse.motd.org/?page_id=273) I will focus on RAM
-initialization.
+[Next](17_cstartup) I will focus on RAM initialization.
 
 ___
 © 2020-2021 Renaud Fivet
