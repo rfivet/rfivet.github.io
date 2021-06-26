@@ -12,8 +12,8 @@ loop. I have two issues with this implementation:
 So I am going to call in some serious reinforcement, which means one of
 the Arm Core Peripherals: the System Tick.
 
-What the System Tick does is very similar to our active delay loop as
-you can see from the following pseudo-code.
+What the System Tick does is very similar to my active delay loop as
+can be seen from the following pseudo-code.
 
 ```c
 while( enabled) {
@@ -139,18 +139,18 @@ Once flashed in the board we can see the LED changes state every second.
 
 ## Checkpoint
 
-We now have the foundation of timing and a first taste of shifting
+I now have the foundation for timing and a first taste of shifting
 execution between a main loop and an interrupt routine.
 
 Code size has been growing steadily since the first bootstrap. On the
 other hand, except for the stack, I have not used RAM memory so far.
 
-        | text  | data  | bss
---------|-------|-------|-----
-boot	| 10	| 0		| 0
-ledon	| 40	| 0		| 0
-blink	| 68	| 0		| 0
-ledtick | 148	| 0		| 0
+|            | text | data  | bss   |
+|------------|-----:|:-----:|:-----:|
+|**boot**    | 10	| 0		| 0     |
+|**ledon**   | 40	| 0		| 0     |
+|**blink**   | 68	| 0		| 0     |
+|**ledtick** | 148	| 0		| 0     |
 
 [Next](https://warehouse.motd.org/?page_id=273) I will focus on RAM
 initialization.
