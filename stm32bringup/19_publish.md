@@ -10,9 +10,9 @@ I chose MIT license as open source license for the code.
 The only rework of the C sources is the addition of a copyright notice
 and conversion of tabs to spaces for portability.
 
-[Next](https://warehouse.motd.org/?page_id=484) I will start working
-with USART peripherals: select an USB adapter, flash the board over the
-UART communication and say hello to the world.
+[Next]( 21_uart) I will start working with USART peripherals: select
+an USB adapter, flash the board over the UART communication and say
+hello to the world.
 
 ___
 © 2020-2021 Renaud Fivet

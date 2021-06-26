@@ -56,9 +56,9 @@ It’s time to move to a more talkative interface so that the board not
 only winks but also speaks. Again I will go through several steps to get
 to a working asynchronous serial communication.
 
-- [Validate](https://warehouse.motd.org/?page_id=484) the serial
-connection by wiring a board with an USB to UART adapter and using a
-Windows Flash loader application to read the chipset flash memory.
+- [Validate]( 21_uart) the serial connection by wiring a board with an
+USB to UART adapter and using a Windows Flash loader application to read
+the chipset flash memory.
 
 - Make sure that the code evolved so far works on the
 [board](https://warehouse.motd.org/?page_id=514) with a serial
