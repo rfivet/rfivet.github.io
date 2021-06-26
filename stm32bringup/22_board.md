@@ -130,7 +130,7 @@ jumper and press reset. This board user LED is red. 😎
 I made sure the code I have evolved so far works on the board with the
 serial connection.
 
-Next I will do some serial transmission.
+[Next]( 23_hello) I will do some serial transmission.
 
 ___
 © 2020-2021 Renaud Fivet

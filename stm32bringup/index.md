@@ -63,8 +63,7 @@ the chipset flash memory.
 - Make sure that the code evolved so far works on the [board]( 22_board)
 with a serial connection.
 
-- Say [hello](https://warehouse.motd.org/?page_id=546) as first
-transmission.
+- Say [hello]( 23_hello) as first transmission.
 
 - Use [stm32flash](https://warehouse.motd.org/?page_id=578) as flashing
 tool on both Windows and Linux.
