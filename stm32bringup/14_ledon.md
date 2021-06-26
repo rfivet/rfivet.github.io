@@ -1,4 +1,4 @@
-# User LED ON
+# 1.4: User LED ON
 
 Turning the user LED on is the simplest direct feedback you can get from
 a board. Most boards you can buy online have two LEDs: power and user.
@@ -13,9 +13,9 @@ can be found
 a look at the schematics we can see that the user LED is connected to
 GPIO B1 and will turn on when that pin is driven low.
 
-![user LED connected to GPIO B1](https://warehouse.motd.org/wp-content/uploads/2020/11/Screenshot-2020-11-19-092721.png)
+![user LED connected to GPIO B1]( img/14_ledpb1.png)
 
-This board is based on the micro-controller STM32F030F4P6, so let’s
+This board is based on the micro-controller STM32F030F4P6, so let's
 learn about its implementation of GPIOs.
 
 ## Know your chipset
@@ -23,7 +23,7 @@ learn about its implementation of GPIOs.
 From the datasheet
 [DS9773](https://www.st.com/content/st_com/en/search.html#q=DS9773-t=resources-page=1)
 we learn that pin 14 of the 20 pin package defaults as PB1 after reset.
-It’s a 3.3V tolerant I/O pin and can be configured either as an output,
+It's a 3.3V tolerant I/O pin and can be configured either as an output,
 an input or one of several alternate functions. The GPIO peripherals are
 connected on the AHB2 Bus which means that they can be controlled
 through their registers visible in the AHB2 sub-range of the Peripherals
@@ -109,7 +109,7 @@ ledon.hex
 Once the board has been flashed with this code, the user LED lights up
 at reset. It turns out to be blue. 😎
 
-![](https://warehouse.motd.org/wp-content/uploads/2020/11/Blink_Moment.png)
+![User LED on](img/14_ledon.png)
 
 ## Checkpoint
 

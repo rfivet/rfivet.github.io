@@ -1,6 +1,6 @@
-# I.6: The Tick
+# 1.6: The Tick
 
-![It’s blue! It blinks! It’s the Tick!](https://warehouse.motd.org/wp-content/uploads/2020/11/tick.png)
+![It’s blue! It blinks! It’s the Tick!]( img/16_tick.png)
 
 In previous iteration, I made the user LED blink using an active delay
 loop. I have two issues with this implementation:

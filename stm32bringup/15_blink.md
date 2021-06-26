@@ -1,4 +1,4 @@
-# I.5: Blinking user LED
+# 1.5: Blinking user LED
 
 Turning the user LED on shows that the board is alive, making it blink
 shows that it has a pulse! A steady power LED and a pulsing user LED is
@@ -73,17 +73,15 @@ rm blink.o blink.elf
 
 ## Test
 
-[video](https://warehouse.motd.org/wp-content/uploads/2020/11/Blink.mp4)
-
-As the video shows, the delay is roughly 600ms. I captured three on/off
-transition in this three second video, looking through the frames gives
-me a better estimation.
+As the [video]( vid/15_blink.mp4) shows, the delay is roughly 600ms. I
+captured three on/off transitions in this three second video, looking
+through the frames gives me a better estimation.
 
 ## Checkpoint
 
 This is just a small increment on my previous step, but that’s iterative
-development in a nutshell. Also I didn’t come with a reasonable value
-for the delay counter at first, it’s easy to underestimate how fast
+development in a nutshell. Also I didn't come with a reasonable value
+for the delay counter at first, it's easy to underestimate how fast
 micro-controllers are.
 
 [Next](16_ledtick), interrupt driven blinking, because active wait delay

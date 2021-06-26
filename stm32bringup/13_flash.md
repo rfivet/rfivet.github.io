@@ -1,4 +1,4 @@
-# Flash – Boot – Debug
+# 1.3: Flash – Boot – Debug
 
 Now that I have an executable bootstrap, I need to flash an actual board
 with it to check if it works as expected. On a member of the STM32F030
@@ -32,7 +32,8 @@ versions. STM32 Discovery and Nucleo boards have an onboard ST-Link v2.
 I am using ST-Link v2 mini clones. For simple use cases, the ST-Link can
 provide power to the board to flash or test.
 
-![ST-Link v2 mini clone connected to STM32F030F4P6 based board](https://warehouse.motd.org/wp-content/uploads/2020/11/ST-Link.png)
+![ST-Link v2 mini clone connected to STM32F030F4P6 based board](
+img/13_stlink.png)
 
 ### STM32 Cube Programmer
 

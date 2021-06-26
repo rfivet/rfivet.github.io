@@ -226,7 +226,7 @@ $ hexdump -C cstartup.bin
 I use the STM32 Cube Programmer to check that the code behaves as
 expected by checking the RAM state after `main()` has been executed.
 
-![RAM display in STM32 Cube Programmer](https://warehouse.motd.org/wp-content/uploads/2021/06/Screenshot-2021-06-07-114546-1024x723.png)
+![RAM display in STM32 Cube Programmer]( img/17_cube.png)
 
 ## Checkpoint
 
