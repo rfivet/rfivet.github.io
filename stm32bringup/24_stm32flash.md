@@ -1,7 +1,8 @@
-2.4 stm32flash
+# 2.4 stm32flash
 
 So far I have been flashing boards via UART or SWD interface using STM32
-Cube Programmer. An alternative to flash via UART is **stm32flash**.
+Cube Programmer. An open source alternative to flash via UART is
+**stm32flash**.
 
 ## Linux Build and Install
 
@@ -81,11 +82,10 @@ the executable.
 
 ## Regression Testing
 
-As my board has been already flashed on Windows, I can perform a simple
-regression test.
+As my board has been already flashed using STM32 Cube Programmer, I can
+perform a simple regression test.
 
-- Read the content of the chipset memory as flashed with the Windows
-application.
+- Read the content of the chipset memory as prviously flashed.
 
 - Flash the same executable using Linux version of stm32flash.
 
@@ -123,8 +123,8 @@ Demonstrator, ST Visual Programmer STM32. They have been marked as NRND
 (Not Recommended for New Design), which means they won’t support latest
 chipsets as they are replaced by STM32 Cube Programmer.
 
-[Next]( https://warehouse.motd.org/?page_id=612) I will write an
-application which make better use of transmission than **hello**.
+[Next]( 25_prototype) I will write an application which make better use
+of transmission than **hello**.
 
 ___
 © 2020-2021 Renaud Fivet

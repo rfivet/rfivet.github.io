@@ -68,11 +68,11 @@ with a serial connection.
 - Use [stm32flash]( 24_stm32flash) as flashing tool on both Windows and
 Linux.
 
-- [Prototype](https://warehouse.motd.org/?page_id=612) an application
-that tells how long the system has been running.
+- [Prototype]( 25_prototype) an application that tells how long the
+system has been running.
 
-- Write a production version of
-[uptime](https://warehouse.motd.org/?page_id=657) application.
+- Write a production version of [uptime](
+https://warehouse.motd.org/?page_id=657) application.
 
 - Bundle the standard C library output functions into an actual
 [library](https://warehouse.motd.org/?page_id=696).
@@ -80,8 +80,8 @@ that tells how long the system has been running.
 - [Configure](https://warehouse.motd.org/?page_id=725) baud rate and
 clocks.
 
-- Handle the transmission with
-[interrupt](https://warehouse.motd.org/?page_id=763).
+- Handle the transmission with [interrupt](
+https://warehouse.motd.org/?page_id=763).
 
 ## Part III: Sensors! So hot! So wet!
 
