@@ -2,7 +2,6 @@
 
 > “The time has come,” the walrus said, “to talk of many things: Of baud
 rates – and clocks – and quartz.”
-
 > Les huit scaroles
 
 One thing to consider in any kind of transmission is the speed, how fast
@@ -48,8 +47,8 @@ value close to 8000000/9600 or 2500/3, 833 is close enough but my actual
 transmission speed is closer to 9604, slightly faster than 9600 baud.
 
 The error is small (4/10000) and the transmission works fine. Still
-common baud rates are 300, 1200, 2400, 9600, 19200, 38400, 57600,
-115200. It would be better if my clock frequency was 6MHz or 12MHz if I
+common baud rates are 300, 1200, 2400, 9600, 19200, 38400, 57600, 115200.
+It would be better if my clock frequency was 6MHz or 12MHz if I
 want to work at higher baud rate.
 
 ## Clocks
@@ -259,14 +258,18 @@ possible cases: HSI, HSE, PLL HSI and PLL HSE.
 #endif
 ```
 
-Systick reload value is calculated based on CLOCK constant value.
+Systick reload value is calculated based on `CLOCK` constant value.
 
-`    SYSTICK_RVR = CLOCK / 8 - 1 ;   /* HBA / 8 */`
+```
+    SYSTICK_RVR = CLOCK / 8 - 1 ;   /* HBA / 8 */
+```
 
-Similarly, USART1 baud rate register is calculated based on CLOCK and
-BAUD constant value.
+Similarly, USART1 baud rate register is calculated based on `CLOCK` and
+`BAUD` constant value.
 
-`    USART1[ BRR] = CLOCK / BAUD ;       /* PCLK is default source */`
+```
+    USART1[ BRR] = CLOCK / BAUD ;       /* PCLK is default source */
+```
 
 I add a debug print at the end of `init()` to display which clock
 configuration has been set.
@@ -311,8 +314,7 @@ system clock. The clock tree is complex and I have only look at a part
 of it. Nevertheless the implementation for the clock configuration give
 me some flexibility and ease of setup.
 
-[Next]( https://warehouse.motd.org/?page_id=763) I will implement
-interrupt driven transmission.
+[Next]( 29_interrupt) I will implement interrupt driven transmission.
 
 ___
 © 2020-2021 Renaud Fivet

@@ -78,8 +78,7 @@ system has been running.
 
 - [Configure]( 28_clocks) baud rate and clocks.
 
-- Handle the transmission with [interrupt](
-https://warehouse.motd.org/?page_id=763).
+- Handle the transmission with [interrupt]( 29_interrupt).
 
 ## Part III: Sensors! So hot! So wet!
 
