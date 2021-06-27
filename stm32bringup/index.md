@@ -71,8 +71,7 @@ Linux.
 - [Prototype]( 25_prototype) an application that tells how long the
 system has been running.
 
-- Write a production version of [uptime](
-https://warehouse.motd.org/?page_id=657) application.
+- Write a production version of [uptime]( 26_uptime) application.
 
 - Bundle the standard C library output functions into an actual
 [library](https://warehouse.motd.org/?page_id=696).
