@@ -48,7 +48,7 @@ it’s **uplow.2.c** which is an implementation of system.h.
 #include "system.h" /* implements system.h */
 ```
 
-I move out the code for `puts()` as it is a library function that doesn’t
+I remove the code for `puts()` as it is a library function that doesn’t
 really belong to the system.
 
 I add the implementation of `kputs()` and `yield()`.
@@ -319,8 +319,8 @@ replacing `printf()` by `putchar()`, thus forcing me to write additional
 code. So far I am not concerned by execution speed, so this type of
 optimization is a bit counter productive.
 
-[Next]( https://warehouse.motd.org/?page_id=696) I will make sure that what belongs to the library category fits in
-an actual library file.
+[Next]( 27_library) I will make sure that what belongs to the library
+category fits in an actual library file.
 
 ___
 © 2020-2021 Renaud Fivet

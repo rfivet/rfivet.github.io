@@ -74,7 +74,7 @@ system has been running.
 - Write a production version of [uptime]( 26_uptime) application.
 
 - Bundle the standard C library output functions into an actual
-[library](https://warehouse.motd.org/?page_id=696).
+[library]( 27_library).
 
 - [Configure](https://warehouse.motd.org/?page_id=725) baud rate and
 clocks.
