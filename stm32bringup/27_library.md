@@ -138,9 +138,8 @@ I had to deal with linking with **gcc** library [before]( 25_prototype),
 so introducing my own library implementation of the standard C library
 output functions is a simple step.
 
-[Next]( https://warehouse.motd.org/?page_id=725) I will continue on the
-topic of asynchronous serial transmission and look into baud rate and
-clock configuration.
+[Next]( 28_clocks) I will continue on the topic of asynchronous serial
+transmission and look into baud rate and clock configuration.
 
 ___
 © 2020-2021 Renaud Fivet

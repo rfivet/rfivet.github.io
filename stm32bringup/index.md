@@ -76,8 +76,7 @@ system has been running.
 - Bundle the standard C library output functions into an actual
 [library]( 27_library).
 
-- [Configure](https://warehouse.motd.org/?page_id=725) baud rate and
-clocks.
+- [Configure]( 28_clocks) baud rate and clocks.
 
 - Handle the transmission with [interrupt](
 https://warehouse.motd.org/?page_id=763).

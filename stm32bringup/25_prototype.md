@@ -165,7 +165,7 @@ following every second after that.
 ## Publish and Retest on Linux
 
 I push the changes to the [git server](
-https://git.sdf.org/rfivet/stm32bringup) then pull them back on my Linux
+https://github.com/rfivet/stm32bringup) then pull them back on my Linux
 machine for retesting. The build fails with an error reported by the
 linker.
 
