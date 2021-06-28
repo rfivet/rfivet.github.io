@@ -86,8 +86,8 @@ to a working asynchronous serial communication.
 
 - [Investigate]( 32_errata) the quality of the DHT11 measurements.
 
-- Use [DS18B20](https://warehouse.motd.org/?page_id=908) digital
-  thermometer for accurate temperature reading.
+- Use [DS18B20]( 33_ds18b20) digital thermometer for accurate
+  temperature reading.
 
 - Trigger [ADC](https://warehouse.motd.org/?page_id=946) conversion to
   read the internal voltage and temperature sensors.

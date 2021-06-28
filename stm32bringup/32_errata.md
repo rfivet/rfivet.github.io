@@ -228,8 +228,8 @@ timing to suit a specific chip. There is variations in readings between
 chips and due to the loose precision it is hard to understand how good
 or how bad the measurements are.
 
-[Next]( https://warehouse.motd.org/?page_id=908) I will use another
-digital thermometer as a reference.
+[Next]( 33_ds18b20) I will use another digital thermometer as a
+reference.
 
 ___
 © 2020-2021 Renaud Fivet
