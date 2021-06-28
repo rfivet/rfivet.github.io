@@ -98,7 +98,7 @@ to a working asynchronous serial communication.
 
 - Build for [In RAM Execution]( 37_inram).
 
-- Read a [Resistor]( https://warehouse.motd.org/?page_id=1421) Value.
+- Read a [Resistor]( 39_resistor) Value.
 
 ___
 © 2020-2021 Renaud Fivet
