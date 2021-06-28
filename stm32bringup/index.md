@@ -27,28 +27,28 @@ I proceed by small incremental steps that are easy to reproduce and simple
 enough to adapt to a variant of the micro-controller or a different board
 layout.
 
-- Pick up a [toolchain](11_toolchain), install it and check that it can
-build an executable.
+- Pick up a [toolchain]( 11_toolchain), install it and check that it can
+  build an executable.
 
-- Write a minimal [bootstrap](12_bootstrap) for a target
-micro-controller and build a first executable.
+- Write a minimal [bootstrap]( 12_bootstrap) for a target
+  micro-controller and build a first executable.
 
-- [Flash](13_flash) the first executable in an actual board and verify
-that it boots.
+- [Flash]( 13_flash) the first executable in an actual board and verify
+  that it boots.
 
 - Provide feedback by turning the [user LED ON](14_ledon) and making it
-[blink](15_blink).
+  [blink]( 15_blink).
 
-- Use the System [Tick](16_ledtick) to handle the blinking.
+- Use the System [Tick]( 16_ledtick) to handle the blinking.
 
-- Insure that RAM memory is initialized as expected for a [C
-startup](17_cstartup).
+- Insure that RAM memory is initialized as expected for a [C startup](
+  17_cstartup).
 
-- Structure the code according to the [three stages](18_3stages): boot,
-initialization and main execution.
+- Structure the code according to the [three stages]( 18_3stages): boot,
+  initialization and main execution.
 
-- [Publish](19_publish) the code to a web git repository for further
-evolution.
+- [Publish]( 19_publish) the code to a web git repository for further
+  evolution.
 
 ## Part II: Let's talk!
 
@@ -57,24 +57,24 @@ only winks but also speaks. Again I will go through several steps to get
 to a working asynchronous serial communication.
 
 - [Validate]( 21_uart) the serial connection by wiring a board with an
-USB to UART adapter and using a Windows Flash loader application to read
-the chipset flash memory.
+  USB to UART adapter and using a Windows Flash loader application to
+  read the chipset flash memory.
 
 - Make sure that the code evolved so far works on the [board]( 22_board)
-with a serial connection.
+  with a serial connection.
 
 - Say [hello]( 23_hello) as first transmission.
 
 - Use [stm32flash]( 24_stm32flash) as flashing tool on both Windows and
-Linux.
+  Linux.
 
 - [Prototype]( 25_prototype) an application that tells how long the
-system has been running.
+  system has been running.
 
 - Write a production version of [uptime]( 26_uptime) application.
 
 - Bundle the standard C library output functions into an actual
-[library]( 27_library).
+  [library]( 27_library).
 
 - [Configure]( 28_clocks) baud rate and clocks.
 
@@ -84,25 +84,24 @@ system has been running.
 
 - Implement [DHT11]( 31_dht11) humidity and temperature sensor reading.
 
-- [Investigate](https://warehouse.motd.org/?page_id=849) the quality of
-the DHT11 measurements.
+- [Investigate]( 32_errata) the quality of the DHT11 measurements.
 
 - Use [DS18B20](https://warehouse.motd.org/?page_id=908) digital
-thermometer for accurate temperature reading.
+  thermometer for accurate temperature reading.
 
 - Trigger [ADC](https://warehouse.motd.org/?page_id=946) conversion to
-read the internal voltage and temperature sensors.
+  read the internal voltage and temperature sensors.
 
 - [Calibrate](https://warehouse.motd.org/?page_id=1035) the internal
-temperature sensor.
+  temperature sensor.
 
 - [Update](https://warehouse.motd.org/?page_id=1180) toolchain to
-latest.
+  latest.
 
-- Build for [In RAM
-Execution](https://warehouse.motd.org/?page_id=1295).
+- Build for [In RAM Execution](
+  https://warehouse.motd.org/?page_id=1295).
 
-- Read a [Resistor](https://warehouse.motd.org/?page_id=1421) Value.
+- Read a [Resistor]( https://warehouse.motd.org/?page_id=1421) Value.
 
 ___
 © 2020-2021 Renaud Fivet
