@@ -1,4 +1,4 @@
-# Interrupt Driven Transmission
+# 2.9: Interrupt Driven Transmission
 
 It’s time to revise the implementation of `kputc()`, remove the
 recursive call to handle CR LF transmission and avoid the busy wait
@@ -271,9 +271,7 @@ There is no obvious benefit in doing transmission under interrupt at
 this stage, my most complex application, **uptime**, prints one line
 every second, there is plenty of idle time.
 
-[Next]( https://warehouse.motd.org/?page_id=798) I will use an external
-sensor to do some measurement.
+[Next]( 31_dht11) I will use an external sensor to do some measurement.
 
 ___
 © 2020-2021 Renaud Fivet
-

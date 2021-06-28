@@ -82,8 +82,7 @@ system has been running.
 
 ## Part III: Sensors! So hot! So wet!
 
-- Implement [DHT11](https://warehouse.motd.org/?page_id=798) humidity
-and temperature sensor reading.
+- Implement [DHT11]( 31_dht11) humidity and temperature sensor reading.
 
 - [Investigate](https://warehouse.motd.org/?page_id=849) the quality of
 the DHT11 measurements.

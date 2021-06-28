@@ -1,7 +1,8 @@
-# Baud Rate and Clocks
+# 2.8: Baud Rate and Clocks
 
 > “The time has come,” the walrus said, “to talk of many things: Of baud
-rates – and clocks – and quartz.”
+  rates – and clocks – and quartz.”
+
 > Les huit scaroles
 
 One thing to consider in any kind of transmission is the speed, how fast

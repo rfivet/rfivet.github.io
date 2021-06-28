@@ -1,4 +1,4 @@
-# C Library
+# 2.7: C Library
 
 So far I have used three Standard C library functions for output:
 `printf()`, `putchar()` and `puts()`. It’s time to bundle them as a library.
