@@ -1,4 +1,4 @@
-# Toolchain Update
+# 3.6: Toolchain Update
 
 While I was experimenting with the internal temperature sensor, a major
 release of GNU ARM Embedded Toolchain came out and I had to do some
@@ -114,9 +114,8 @@ different core. The compiler is aware of the location of the toolchain
 libraries while the linker need explicit parameters to handle those
 changes.
 
-[Next]( https://warehouse.motd.org/?page_id=1295) I will (re)build to
-execute code in RAM instead of FLASH.
+[Next]( 37_inram) I will (re)build to execute code in RAM instead of
+FLASH.
 
 ___
 © 2020-2021 Renaud Fivet
-

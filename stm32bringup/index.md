@@ -96,8 +96,7 @@ to a working asynchronous serial communication.
 
 - [Update]( 36_update) toolchain to latest.
 
-- Build for [In RAM Execution](
-  https://warehouse.motd.org/?page_id=1295).
+- Build for [In RAM Execution]( 37_inram).
 
 - Read a [Resistor]( https://warehouse.motd.org/?page_id=1421) Value.
 

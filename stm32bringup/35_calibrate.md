@@ -1,4 +1,4 @@
-# Internal Sensors Calibration
+# 3.5: Internal Sensors Calibration
 
 When it comes to temperature measurement, the documented factory
 calibration of STM32F030 family members does not provide enough
@@ -399,7 +399,7 @@ If I repeat the same experiments with another board
 | Calibration 110 |         |         | 1333   |           |
 | Room 19.4℃      |  23.0   | 1504    | 1752   | 3.340     |
 | Freezer ~18℃    |	-17.7   | 1505    | 1961   |           |
-  
+
 ```
 AVG_SLOPE = (1961/1505 - 1752/1504) * 1521 / 40.7
           = 5.160 ADC_steps/℃
