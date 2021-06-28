@@ -94,8 +94,7 @@ to a working asynchronous serial communication.
 
 - [Calibrate]( 35_calibrate) the internal temperature sensor.
 
-- [Update](https://warehouse.motd.org/?page_id=1180) toolchain to
-  latest.
+- [Update]( 36_update) toolchain to latest.
 
 - Build for [In RAM Execution](
   https://warehouse.motd.org/?page_id=1295).

@@ -106,7 +106,7 @@ $ stm32flash -r - -S 0x1FFFF7a0:96 COM6 2>/dev/null | hexdump -C
 | 0x1FFFF7AC | Unique ID       | 12   |	     | √        |
 | 0x1FFFF7B8 | TS_CAL1         | 2    |	√    | √        |
 | 0x1FFFF7BA | VREFINT_CAL     | 2    |	√    | √        |
-| 0x1FFFF7C2 | TS_CAL2         | 2    |	√    |          |
+| 0x1FFFF7C2 | TS_CAL2         | 2    |      | √        |
 | 0x1FFFF7CC | Flash size (KB) | 2    |	√    | √        |
 
 This is the same layout as the one documented in RM0091 Reference Manual
@@ -399,7 +399,7 @@ If I repeat the same experiments with another board
 | Calibration 110 |         |         | 1333   |           |
 | Room 19.4℃      |  23.0   | 1504    | 1752   | 3.340     |
 | Freezer ~18℃    |	-17.7   | 1505    | 1961   |           |
-
+  
 ```
 AVG_SLOPE = (1961/1505 - 1752/1504) * 1521 / 40.7
           = 5.160 ADC_steps/℃
@@ -443,9 +443,8 @@ page with my findings.
 I have not included here the display code I have been using in the cold
 experiment, I will explain that later in the display section.
 
-[Next]( https://warehouse.motd.org/?page_id=1180) I will cover the
-toolchain update that I made while working on the temperature sensors.
+[Next]( 36_update) I will cover the toolchain update that I made while
+working on the temperature sensors.
 
 ___
 © 2020-2021 Renaud Fivet
-
