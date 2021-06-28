@@ -89,8 +89,8 @@ to a working asynchronous serial communication.
 - Use [DS18B20]( 33_ds18b20) digital thermometer for accurate
   temperature reading.
 
-- Trigger [ADC](https://warehouse.motd.org/?page_id=946) conversion to
-  read the internal voltage and temperature sensors.
+- Trigger [ADC]( 34_adcvnt) conversion to read the internal voltage and
+  temperature sensors.
 
 - [Calibrate](https://warehouse.motd.org/?page_id=1035) the internal
   temperature sensor.
