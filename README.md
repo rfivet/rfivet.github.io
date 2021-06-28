@@ -1,8 +1,6 @@
-# Projects
+# README
 
-[µEMACS](https://warehouse.motd.org/?page_id=34)
+Project specific documentation.
 
-[stm32bringup](https://warehouse.motd.org/?page_id=148)
-
----
-Copyright (c) 2021 Renaud Fivet
+- Format: Github Flavoured Markdown
+- Link: https://rfivet.github.io/

@@ -50,7 +50,7 @@ layout.
 - [Publish]( 19_publish) the code to a web git repository for further
   evolution.
 
-## Part II: Let's talk!
+## <a id="part2">Part II: Let's talk!</a>
 
 It’s time to move to a more talkative interface so that the board not
 only winks but also speaks. Again I will go through several steps to get
@@ -80,7 +80,7 @@ to a working asynchronous serial communication.
 
 - Handle the transmission with [interrupt]( 29_interrupt).
 
-## Part III: Sensors! So hot! So wet!
+## <a id="part3">Part III: Sensors! So hot! So wet!</a>
 
 - Implement [DHT11]( 31_dht11) humidity and temperature sensor reading.
 
@@ -92,8 +92,7 @@ to a working asynchronous serial communication.
 - Trigger [ADC]( 34_adcvnt) conversion to read the internal voltage and
   temperature sensors.
 
-- [Calibrate](https://warehouse.motd.org/?page_id=1035) the internal
-  temperature sensor.
+- [Calibrate]( 35_calibrate) the internal temperature sensor.
 
 - [Update](https://warehouse.motd.org/?page_id=1180) toolchain to
   latest.

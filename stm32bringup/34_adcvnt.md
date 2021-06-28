@@ -5,7 +5,7 @@ reference connected to two channels of the Analog to Digital Converter
 (ADC) peripheral. I will take some readings to see how that compare to
 other temperature sensors.
 
-The STM32F030 family has a suffix 6 (STM32F030F4P6) for the ambient
+The STM32F030 family has a suffix 6 (STM32F030F4P**6**) for the ambient
 operating temperature: -40℃ to 85℃. It should be fine to use not only
 inside rooms but also outdoor (may be not on the dashboard of a car
 parked under direct tropical sunlight at noon in summer).
@@ -348,9 +348,9 @@ into actual Vref. This will help in adjusting the ADC readings. But for
 temperature, the provided calibration is insufficient, there is only one
 point measured in factory for the STM32F030 family members.
 
-[Next]( https://warehouse.motd.org/?page_id=1035), I will do temperature
-calibration, which means taking two measurements as far apart as
-possible in the working range I want to use.
+[Next]( 35_calibrate), I will do temperature calibration, which means
+taking two measurements as far apart as possible in the working range I
+want to use.
 
 ___
 © 2020-2021 Renaud Fivet

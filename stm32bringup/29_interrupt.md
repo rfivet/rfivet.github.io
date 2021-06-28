@@ -271,7 +271,7 @@ There is no obvious benefit in doing transmission under interrupt at
 this stage, my most complex application, **uptime**, prints one line
 every second, there is plenty of idle time.
 
-[Next]( 31_dht11) I will use an external sensor to do some measurement.
+[Next]( index#part3) I will use an external sensor to do some measurement.
 
 ___
 © 2020-2021 Renaud Fivet
