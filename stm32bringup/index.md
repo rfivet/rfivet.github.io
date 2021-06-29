@@ -100,5 +100,9 @@ to a working asynchronous serial communication.
 
 - Read a [Resistor]( 39_resistor) Value.
 
+## Appendices
+
+-- [Factory-programmed]( AA_factory) values.
+
 ___
 © 2020-2021 Renaud Fivet
