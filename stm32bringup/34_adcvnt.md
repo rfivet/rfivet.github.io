@@ -71,7 +71,7 @@ maximum ADC sampling clock is 14MHz. It is possible to select either an
 internal 14 MHz clock (HSI14) or PCLK divided by 2 or 4. I want to check
 how the clock affects the readings (HSI14, 28/2, 24/2, 48/4). At first I
 couldn’t manage to make PCLK/4 work until I found the note on ADC
-calibration work around in the errata [ES0219](
+calibration work around in the errata [ES0219 2.5.3](
 https://www.st.com/content/st_com/en/search.html#q=%20ES0219-t=resources-page=1).
 
 After this initialization, I can trigger an ADC conversion by issuing a
@@ -117,7 +117,7 @@ memory.
 
 ```c
 /* STM32F030 calibration addresses (at 3.3V and 30C) */
-#define TS_CAL                  ((unsigned short *) 0x1FFFF7B8)
+#define TS_CAL1                 ((unsigned short *) 0x1FFFF7B8)
 #define VREFINT_CAL             ((unsigned short *) 0x1FFFF7BA)
 ```
 
@@ -191,7 +191,7 @@ void adc_vnt( vnt_cmd_t cmd, short *ptrV, short *ptrC) {
     if( cmd <= VNT_CAL) {
     /* Calibration Values */
         *ptrV = *VREFINT_CAL ;
-        *ptrC = *TS_CAL ;
+        *ptrC = *TS_CAL1 ;
         return ;
     }
 
@@ -200,14 +200,14 @@ void adc_vnt( vnt_cmd_t cmd, short *ptrV, short *ptrC) {
     *ptrV = adc_convert() ;
 
     if( cmd == VNT_VNC) {
+        *ptrC = 300 + (*TS_CAL1 - *ptrC * *VREFINT_CAL / *ptrV) * 10000 / 5336 ;
         *ptrV = 330 * *VREFINT_CAL / *ptrV ;
-        *ptrC = 850 + (1500 - *ptrC) * 10 / 4 ;
     }
 }
 ```
 
-The calculation for the temperature will be updated once I have done a
-two point temperature calibration.
+The calculation for the temperature is based on the code example from
+the reference manual (RM0360 A.7.16).
 
 The only thing missing is the description of the newly used registers
 and bitfields.
@@ -285,8 +285,9 @@ int main( void) {
 #ifdef RAW
             adc_vnt( VNT_RAW, &Vsample, &Csample) ;
             printf( "%i, %i, %i, %i, ", calV, Vsample, calC, Csample) ;
+            Csample = 300 + (calC - (int) Csample * calV / Vsample)
+                                                                * 10000 / 5336 ;
             Vsample = 330 * calV / Vsample ;
-            Csample = 850 + (1500 - (int) Csample) * 10 / 4 ;
 #else
             adc_vnt( VNT_VNC, &Vsample, &Csample) ;
 #endif
@@ -337,6 +338,8 @@ Flashing the board and starting execution, I can see the results of the
 ADC conversion and the calculated values.
 
 ![Raw ADC conversion readings]( img/34_output.png)
+
+The temperature readings are roughly 5℃ higher than room temperature.
 
 ## Checkpoint
 
