@@ -1,4 +1,4 @@
-# Appendix A
+# Appendix A: Factory written content
 
 	$ stm32flash -r - -S 0x1FFFF7a0:96 COM6 2>/dev/null | hexdump -C
 	00000000  ff ff ff ff 31 00 10 00  ff ff ff ff 14 80 20 00  |....1......... .|
