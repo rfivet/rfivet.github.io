@@ -168,17 +168,20 @@ execution.
 
 ## Memory Models
 
-I have the choice between three memory models when I build.
+I have the choice between four memory models when I build.
 
-|         | Load address (word aligned) | ISRV Location      |
-|---------|-----------------------------|--------------------|
-| BOOT    | Beginning of FLASH          | Beginning of FLASH |
-| GOFLASH | In FLASH                    | Beginning of RAM   |
-| GORAM   | In RAM, after bootloader reserved space
-                                        | Beginning of RAM   |
+|         | ISRV Location      | Load address (word aligned)             |
+|---------|--------------------|-----------------------------------------|
+|BOOTFLASH| Beginning of FLASH | Beginning of FLASH                      |
+| BOOTRAM | Beginning of RAM   | Beginning of RAM                        |
+| GOFLASH | Beginning of RAM   | In FLASH                                |
+| GORAM   | Beginning of RAM   | In RAM, after bootloader reserved space |
 
-- **BOOT**: Executed at reset depending of BOOT0 pin level otherwise
+- **BOOTFLASH**: Executed at reset depending of BOOT0 pin level otherwise
   triggered by a (boot)loader.
+
+- **BOOTRAM**: Executed at reset depending of BOOT0/BOOT1 configuration
+  otherwise triggered by a (boot)loader through SWD.
 
 - **GOFLASH**: Executed at reset if located at beginning of FLASH
   otherwise triggered by a (boot)loader. (Spoiler: IAP and multi boot)
@@ -204,13 +207,16 @@ the memory part and remove the RAM isr vector hardcoded size.
 MEMORY
 {
 /* FLASH means code, read only data and data initialization */
-    FLASH (rx)  : ORIGIN = FLASHSTART, LENGTH =  FLASHSIZE
-    RAM   (rwx) : ORIGIN = RAMSTART,   LENGTH =  RAMSIZE
+    FLASH (rx) : ORIGIN = DEFINED(FLASHSTART) ? FLASHSTART : 0x08000000,
+        LENGTH =  DEFINED(FLASHSIZE) ? FLASHSIZE : 16K
+    RAM  (rwx) : ORIGIN = DEFINED(RAMSTART) ? RAMSTART : 0x20000000,
+        LENGTH =  DEFINED(RAMSIZE) ? RAMSIZE : 4K
 }
 ```
 
-The Makefile will provide the necessary addresses and size information
-by passing parameters to the linker.
+The Makefile will provide the necessary addresses and sizes information
+by passing parameters to the linker: `FLASHSTART`, `FLASHSIZE`,
+`RAMSTART`, `RAMSIZE`.
 
 ```
     .isrdata (COPY):
