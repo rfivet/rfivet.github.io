@@ -419,9 +419,9 @@ This way if I build uptime prototype in GORAM memory model
 
 ```
 $ make
-f030f4.0x20000800.elf
+f030f4.elf
    text    data     bss     dec     hex filename
-   1164       0      20    1184     4a0 f030f4.0x20000800.elf
+   1164       0      20    1184     4a0 f030f4.elf
 f030f4.hex
 f030f4.0x20000800.bin
 ```
@@ -443,7 +443,7 @@ address from the intel hex file are planned to be included in v0.7.
 Until v0.7 is out, I am using my own patched version of stm32flash or
 the binary files when I need to test GOFLASH and GORAM memory models.
 
-As I branched off my own patched version of **stm32flash**, I added a -x
+As I branched off my own patched version of **stm32flash**, I added a `-x`
 option to write and execute an intel hex file:
 
 `stm32flash -x file.hex COM#`
@@ -461,8 +461,8 @@ GORAM with **STM32 Cube Programmer**.
 
 ## Checkpoint
 
-[Next]() I will add integrity check at startup by doing CRC32 validation
-of the code.
+[Next](38_crc32) I will add integrity check at startup by doing CRC32
+validation of the code.
 
 ___
 © 2020-2021 Renaud Fivet

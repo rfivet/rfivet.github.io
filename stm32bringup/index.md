@@ -98,6 +98,8 @@ to a working asynchronous serial communication.
 
 - Build for [In RAM Execution]( 37_inram).
 
+- Perform [CRC-32]( 38_crc32) flash content validation during startup.
+
 - Read a [Resistor]( 39_resistor) Value.
 
 ## Appendices
