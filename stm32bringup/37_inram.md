@@ -168,9 +168,9 @@ execution.
 
 ## Memory Models
 
-I have the choice between four memory models when I build.
+I have now the choice between four memory models when I build.
 
-|         | ISRV Location      | Load address (word aligned)             |
+| Model   | ISRV Location      | Load address (word aligned)             |
 |---------|--------------------|-----------------------------------------|
 |BOOTFLASH| Beginning of FLASH | Beginning of FLASH                      |
 | BOOTRAM | Beginning of RAM   | Beginning of RAM                        |
@@ -192,16 +192,21 @@ I have the choice between four memory models when I build.
 To avoid having to edit multiple files when switching between models or
 introducing a new chipset family, I make the following changes.
 
-- Use a generic linker script.
+1. Use a generic linker script.
 
-- Let the startup code handle the isr vector initialization and the
-  memory mapping.
+2. Let the startup code handle the isr vector initialization and the
+   memory mapping.
 
-- Maintain the FLASH and RAM information and isr vector position in the
-  Makefile.
+3. Maintain the FLASH and RAM information and isr vector position in the
+   Makefile.
 
-To turn f030f4.ram.ld into a generic linker script, I need to abstract
-the memory part and remove the RAM isr vector hardcoded size.
+### 1. Generic Linker Script
+
+To turn f030f4.ram.ld into a generic linker script, I need to
+
+- abstract the memory part.
+
+- remove the RAM isr vector hardcoded size.
 
 ```
 MEMORY
@@ -219,7 +224,8 @@ by passing parameters to the linker: `FLASHSTART`, `FLASHSIZE`,
 `RAMSTART`, `RAMSIZE`.
 
 ```
-    .isrdata (COPY):
+    /* In RAM isr vector reserved space at beginning of RAM */
+    .isrdata (NOLOAD):
     {
         KEEP(*(.ram_vector))
     } > RAM
@@ -228,21 +234,25 @@ by passing parameters to the linker: `FLASHSTART`, `FLASHSIZE`,
 The startup code will allocate ram_vector[] in .ram_vector section if
 needed.
 
+### 2. Startup Code
+
 I create the startup code startup.ram.c from a copy of startup.txeie.c,
 using conditional compiled code selected by RAMISRV whose definition
 will be passed as parameter to the compiler.
 
 ```
-#if RAMISRV
+#if RAMISRV == 2
 # define ISRV_SIZE (sizeof isr_vector / sizeof *isr_vector)
 isr_p ram_vector[ ISRV_SIZE] __attribute__((section(".ram_vector"))) ;
 #endif
+
+int main( void) ;
 
 void Reset_Handler( void) {
     const long  *f ;    /* from, source constant data from FLASH */
     long    *t ;        /* to, destination in RAM */
 
-#if RAMISRV
+#if RAMISRV == 2
 /* Copy isr vector to beginning of RAM */
     for( unsigned i = 0 ; i < ISRV_SIZE ; i++)
         ram_vector[ i] = isr_vector[ i] ;
@@ -281,27 +291,50 @@ controllers and peripherals in one place.
 
 `#include "stm32f030xx.h"`
 
+### 3. Makefile
+
 The Makefile now holds the memory model definition that is passed as
 parameters to the compiler and the linker.
 
 ```make
-# In RAM Execution
+### Memory Models
+# By default we use the memory mapping from linker script
+
+# In RAM Execution, load and start by USART bootloader
 # Bootloader uses first 2K of RAM, execution from bootloader
 #FLASHSTART = 0x20000800
 #FLASHSIZE  = 2K
 #RAMSTART   = 0x20000000
 #RAMSIZE    = 2K
 
-# In Flash Execution
-# if FLASHSTART is not at beginning of FLASH: execution from bootloader
-FLASHSTART = 0x08000000
-FLASHSIZE  = 16K
-RAMSTART   = 0x20000000
-RAMSIZE    = 4K
+# In RAM Execution, load and start via SWD
+# 4K RAM available, execution via SWD
+#FLASHSTART = 0x20000000
+#FLASHSIZE  = 3K
+#RAMSTART   = 0x20000C00
+#RAMSIZE    = 1K
 
-# ISR vector copied and mapped to RAM if FLASHSTART != 0x08000000
-ifneq ($(FLASHSTART),0x08000000)
- RAMISRV := 1
+# In Flash Execution
+# if FLASHSTART is not at beginning of FLASH: execution via bootloader or SWD
+#FLASHSTART = 0x08000000
+#FLASHSIZE  = 16K
+#RAMSTART   = 0x20000000
+#RAMSIZE    = 4K
+
+# ISR vector copied and mapped to RAM when FLASHSTART != 0x08000000
+ifdef FLASHSTART
+ ifneq ($(FLASHSTART),0x08000000)
+  ifeq ($(FLASHSTART),0x20000000)
+   # Map isr vector in RAM
+   RAMISRV := 1
+  else
+   # Copy and map isr vector in RAM
+   RAMISRV := 2
+  endif
+ endif
+ BINLOC  = $(FLASHSTART)
+else
+ BINLOC  = 0x08000000
 endif
 ```
 
@@ -317,8 +350,14 @@ WARNINGS=-pedantic -Wall -Wextra -Wstrict-prototypes
 CFLAGS = $(CPU) -g $(WARNINGS) -Os $(CDEFINES)
 
 LD_SCRIPT = generic.ld
-LDDEFS = --defsym,FLASHSTART=$(FLASHSTART),--defsym,FLASHSIZE=$(FLASHSIZE)
-LDDEFINES = $(LDDEFS),--defsym,RAMSTART=$(RAMSTART),--defsym,RAMSIZE=$(RAMSIZE)
+ifdef FLASHSTART
+ LDOPTS  =--defsym FLASHSTART=$(FLASHSTART) --defsym FLASHSIZE=$(FLASHSIZE)
+ LDOPTS +=--defsym RAMSTART=$(RAMSTART) --defsym RAMSIZE=$(RAMSIZE)
+endif
+LDOPTS +=-Map=$(subst .elf,.map,$@) -cref --print-memory-usage
+comma :=,
+space :=$() # one space before the comment
+LDFLAGS =-Wl,$(subst $(space),$(comma),$(LDOPTS))
 ```
 
 As I am revising the compilation flags, I have increased the level of
@@ -327,19 +366,18 @@ warnings by adding -pedantic, -Wstrict-prototypes.
 Build rules updated with new symbols for the linker.
 
 ```make
-$(PROJECT).elf: $(OBJS) lib$(LIBSTEM).a
-    @echo $@
-    $(CC) $(CPU) -T$(LD_SCRIPT) -L. -Wl,$(LDDEFINES),-Map=$(PROJECT).map,-cref \
--nostartfiles -o $@ $(OBJS) $(LIBS)
-    $(SIZE) $@
-    $(OBJDUMP) -hS $@ > $(PROJECT).lst
+$(PROJECT).elf: $(OBJS) libstm32.a
+boot.elf: boot.o
+ledon.elf: ledon.o
+blink.elf: blink.o
+ledtick.elf: ledtick.o
+cstartup.elf: cstartup.o
 
-%.elf: %.o lib$(LIBSTEM).a
+%.elf:
     @echo $@
-    $(CC) $(CPU) -T$(LD_SCRIPT) -L. -Wl,$(LDDEFINES),-Map=$*.map,-cref \
--nostartfiles -o $@ $< $(LIBS)
+    $(CC) $(CPU) -T$(LD_SCRIPT) $(LDFLAGS) -nostartfiles -o $@ $+
     $(SIZE) $@
-    $(OBJDUMP) -hS $@ > $*.lst
+    $(OBJDUMP) -hS $@ > $(subst .elf,.lst,$@)
 ```
 
 The projects composition need to be updated to use the new startup.
@@ -373,9 +411,9 @@ I update the composition of the library accordingly.
 `LIBOBJS = printf.o putchar.o puts.o memset.o memcpy.o`
 
 Finally, to keep track of the memory model and the load location, I put
-the load address in the name of the file generated.
+the load address in the name of the binary file generated.
 
-`PROJECT = f030f4.$(FLASHSTART)`
+`all: $(PROJECT).$(BINLOC).bin $(PROJECT).hex`
 
 This way if I build uptime prototype in GORAM memory model
 
@@ -384,7 +422,7 @@ $ make
 f030f4.0x20000800.elf
    text    data     bss     dec     hex filename
    1164       0      20    1184     4a0 f030f4.0x20000800.elf
-f030f4.0x20000800.hex
+f030f4.hex
 f030f4.0x20000800.bin
 ```
 
@@ -394,9 +432,6 @@ The name of the file will remind me where to load the code.
 $ stm32flash -w f030f4.0x20000800.bin -S 0x20000800 COM6
 $ stm32flash -g 0x20000800
 ```
-
-**ToDo**: load.sh, script to encapsulate those two commands by
-extracting the address from the file name.
 
 ## Caveat: stm32flash v0.6 intel hex bug
 
@@ -408,10 +443,26 @@ address from the intel hex file are planned to be included in v0.7.
 Until v0.7 is out, I am using my own patched version of stm32flash or
 the binary files when I need to test GOFLASH and GORAM memory models.
 
-**ToDo**: Add -x option to stm32flash, to write and execute an intel hex
-file, `stm32flash -x file.hex COM#`
+As I branched off my own patched version of **stm32flash**, I added a -x
+option to write and execute an intel hex file:
+
+`stm32flash -x file.hex COM#`
+
+## Testing
+
+I build all four memory models and check that they can be loaded and
+executed using both **stm32flash** and **STM32 Cube Programmer**.
+
+Using the USART bootloader, I validate BOOTFLASH, GOFLASH and GORAM with
+**stm32flash** and **STM32 Cube Programmer**.
+
+Using the SWD interface, I validate BOOTFLASH, GOFLASH, BOOTRAM and
+GORAM with **STM32 Cube Programmer**.
 
 ## Checkpoint
+
+[Next]() I will add integrity check at startup by doing CRC32 validation
+of the code.
 
 ___
 © 2020-2021 Renaud Fivet
