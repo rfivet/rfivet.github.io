@@ -50,11 +50,11 @@ On Ubuntu, apt will select the package that matches your architecture
 
 ## Getting the sources
 
-µEMACS source code is available on
-[github](https://github.com/rfivet/uemacs) and mirrored at
-[git.sdf.org](https://git.sdf.org/rfivet/uemacs). You can either clone
-the [git repository](https://github.com/rfivet/uemacs.git) or download a
-[zip archive](https://github.com/rfivet/uemacs/archive/master.zip).
+µEMACS source code is available on [github](
+https://github.com/rfivet/uemacs) and mirrored at [git.sdf.org](
+https://git.sdf.org/rfivet/uemacs). You can either clone the [git
+repository]( https://github.com/rfivet/uemacs.git) or download a [zip
+archive]( https://github.com/rfivet/uemacs/archive/master.zip).
 
 Move to working directory and clone:
 
@@ -68,17 +68,13 @@ Move to working directory and clone:
 
 ```
 % cd ~/Projects/uemacs
-% make depend
 % make
 ```
 
 If **GNU make** is not set as the default make you will have to call it
 explicitly
 
-```
-% gmake depend
-% gmake
-```
+`% gmake`
 
 ## Testing
 
@@ -92,7 +88,7 @@ Execute a sample script:
 
 `% ./ue -x screensize.cmd`
 
-![Executing script screensize.cmd](img/ue_screensize.png)
+![Executing script screensize.cmd]( img/ue_screensize.png)
 
 ___
 © 2020-2021 Renaud Fivet
