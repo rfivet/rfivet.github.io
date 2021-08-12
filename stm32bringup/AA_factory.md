@@ -37,6 +37,7 @@
 | x10    | x800A | x41 | x08   | ‘QMY687 ‘ | x6E6    | x5F1        | x53E    | 16    | hZE?    |
 | x21    | x4D   | x47 | x0C   | ‘QMT476 ‘ | x6D8    | x5F3        | x52D    | 64    | hlR\xBF |
 | x21    | x36   | x47 | x0A   | ‘QRW813 ‘ | x6DF    | x5F3        | x539    | 64    | hhF\xFF |
+| x21    | x41   | x1E | x12   | ‘SNG712 ‘ | x6EB    | x5F0        | x526    | 64    | hjS\xFF |
 
 ___
 © 2020-2021 Renaud Fivet
