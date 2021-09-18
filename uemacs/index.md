@@ -8,7 +8,5 @@ Latest version built and tested on Cygwin, Ubuntu Linux and NetBSD.
 
 ![µEMACS sample screenshot](img/ue_425.png)
 
-[![Coverity Scan Build Status](https://scan.coverity.com/projects/4449/badge.svg)](https://scan.coverity.com/projects/emacs-32bc5656-e63f-497b-a44f-696ed11bf398)
-
 ___
 © 2020-2021 Renaud Fivet
