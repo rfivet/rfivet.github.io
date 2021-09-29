@@ -341,8 +341,8 @@ endif
 Compiler and linker have different syntax for defining symbols through
 command line parameters.
 
-```
-CPU = -mthumb -mcpu=cortex-m0
+```make
+CPU = -mthumb -mcpu=cortex-m0 --specs=nano.specs
 ifdef RAMISRV
  CDEFINES = -DRAMISRV=$(RAMISRV)
 endif
@@ -383,32 +383,6 @@ cstartup.elf: cstartup.o
 The projects composition need to be updated to use the new startup.
 
 `SRCS = startup.ram.c txeie.c uptime.1.c`
-
-As the latest version of the toolchain optimizes the startup code,
-converting the isr vector copy loop into a call to `memcpy()`, I add my
-own lightweight version of `memcpy()`. It’s sub-optimal and doesn’t
-handle the case when the end of the source overlaps the beginning of the
-destination but it fits the needs of the GORAM memory model where RAM
-size can be very constraining.
-
-```c
-/* memcpy.c -- copy memory area     */
-
-#include <string.h>
-
-void *memcpy( void *to, const void *from, size_t n) {
-    const char *s = from ;
-    char *d = to ;
-    while( n--)
-        *d++ = *s++ ;
-
-    return to ;
-}
-```
-
-I update the composition of the library accordingly.
-
-`LIBOBJS = printf.o putchar.o puts.o memset.o memcpy.o`
 
 Finally, to keep track of the memory model and the load location, I put
 the load address in the name of the binary file generated.

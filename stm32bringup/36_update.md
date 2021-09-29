@@ -63,10 +63,24 @@ LIBDIR and LIB_PATHS definitions.
         -nostartfiles -o $@ $(OBJS) $(LIBS)
 ```
 
-Finally, I revised the way I specify the commands location by updating
-the PATH environment variable instead of giving the full path of each
-command. On Windows, I make sure that drive specification matches the
-development environment in use (Cygwin, MSYS2 and other).
+As the compiler front end is now controlling the libraries selection it is
+possible to give it a hint how to select a better optimized memset().  The
+libc library comes in two flavors: regular and nano.
+
+```make
+OBJS = $(SRCS:.c=.o)
+LIBOBJS = printf.o putchar.o puts.o # memset.o
+
+CPU = -mthumb -mcpu=cortex-m0 --specs=nano.specs
+```
+
+memset() included in the nano version of libc occupies the same space as my
+own implementation.
+
+Finally, I revised the way I specify the commands location by updating the
+PATH environment variable instead of giving the full path of each command.
+On Windows, I make sure that drive specification matches the development
+environment in use (Cygwin, MSYS2 and other).
 
 ```make
 ### Build environment selection
