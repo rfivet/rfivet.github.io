@@ -35,9 +35,12 @@
 | x10    | x1D   | x41 | x12   | ‘W4R342 ‘ | x6E4    | x5F1        | x535    | 16    | hZJ?    |
 | x10    | x10   | x17 | x05   | ‘WAA390 ‘ | x6E9    | x5F8        | x523    | 16    | hY=?    |
 | x10    | x800A | x41 | x08   | ‘QMY687 ‘ | x6E6    | x5F1        | x53E    | 16    | hZE?    |
+| x10    | xDDC1 |xDDC1| x0D   | ‘       ‘ | x703    | x5E9        | x535    | 32    | hNb\xFF |
+| x10    | xDDC1 |xDDC1| x0F   | ‘       ‘ | x70B    | x5EF        | x537    | 32    | hHX\xFF |
+| x10    | xDDC1 |xDDC1| x10   | ‘       ‘ | x6FE    | x5E9        | x539    | 32    | hZa\xFF |
 | x21    | x4D   | x47 | x0C   | ‘QMT476 ‘ | x6D8    | x5F3        | x52D    | 64    | hlR\xBF |
 | x21    | x36   | x47 | x0A   | ‘QRW813 ‘ | x6DF    | x5F3        | x539    | 64    | hhF\xFF |
 | x21    | x41   | x1E | x12   | ‘SNG712 ‘ | x6EB    | x5F0        | x526    | 64    | hjS\xFF |
 
 ___
-© 2020-2021 Renaud Fivet
+© 2020-2022 Renaud Fivet
