@@ -1,6 +1,6 @@
 # Projects
 
-[µEMACS](uemacs/)
+[µEMACS](uemacsd/)
 
 [stm32bringup](stm32bringup/)
 
