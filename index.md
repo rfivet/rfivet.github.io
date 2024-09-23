@@ -2,7 +2,7 @@
 
 [µEMACS](uemacs/)
 
-[stm32bringup](stm32bringupd/)
+[stm32bringup](stm32bringup/)
 
 [BCG101](BCG101/)
 
